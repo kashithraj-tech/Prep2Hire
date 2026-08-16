@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Prep2Hire | Sign Up</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container py-5">
+
+    <div
+        class="row justify-content-center">
+
+        <div class="col-md-8 col-lg-6">
+
+            <div
+                class="card
+                       border-0
+                       shadow
+                       rounded-4
+                       p-4">
+
+
+                <!-- Logo -->
+
+                <div class="text-center mb-4">
+
+                    <a
+                        href="../index.html"
+                        class="text-decoration-none">
+
+                        <h2
+                            class="fw-bold text-primary">
+
+                            Prep2Hire
+
+                        </h2>
+
+                    </a>
+
+
+                    <p class="text-muted">
+
+                        Create your student account
+
+                    </p>
+
+                </div>
+
+
+                <!-- Signup Form -->
+
+                <form
+                    id="signupForm">
+
+
+                    <!-- Name -->
+
+                    <div class="mb-3">
+
+                        <label
+                            class="form-label fw-semibold">
+
+                            Full Name
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            class="form-control"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="mb-3">
+
+                        <label
+                            class="form-label fw-semibold">
+
+                            Email
+
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            class="form-control"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="mb-3">
+
+                        <label
+                            class="form-label fw-semibold">
+
+                            Password
+
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            class="form-control"
+                            placeholder="Create a password"
+                            required>
+
+                    </div>
+
+
+                    <!-- Confirm Password -->
+
+                    <div class="mb-3">
+
+                        <label
+                            class="form-label fw-semibold">
+
+                            Confirm Password
+
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            class="form-control"
+                            placeholder="Confirm your password"
+                            required>
+
+                    </div>
+
+
+                    <!-- College -->
+
+                    <div class="mb-3">
+
+                        <label
+                            class="form-label fw-semibold">
+
+                            College Name
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="college"
+                            class="form-control"
+                            placeholder="Enter your college"
+                            required>
+
+                    </div>
+
+
+                    <!-- Department -->
+
+                    <div class="mb-3">
+
+                        <label
+                            class="form-label fw-semibold">
+
+                            Department
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="department"
+                            class="form-control"
+                            placeholder="Example: AI & Data Science"
+                            required>
+
+                    </div>
+
+
+                    <!-- Year -->
+
+                    <div class="mb-4">
+
+                        <label
+                            class="form-label fw-semibold">
+
+                            Year of Study
+
+                        </label>
+
+                        <select
+                            id="year"
+                            class="form-select"
+                            required>
+
+                            <option value="">
+                                Select your year
+                            </option>
+
+                            <option value="1st Year">
+                                1st Year
+                            </option>
+
+                            <option value="2nd Year">
+                                2nd Year
+                            </option>
+
+                            <option value="3rd Year">
+                                3rd Year
+                            </option>
+
+                            <option value="4th Year">
+                                4th Year
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="btn
+                               btn-primary
+                               w-100
+                               rounded-pill
+                               py-2">
+
+                        Create Account
+
+                    </button>
+
+
+                </form>
+
+
+                <!-- Login -->
+
+                <div
+                    class="text-center mt-4">
+
+                    <span class="text-muted">
+
+                        Already have an account?
+
+                    </span>
+
+                    <a
+                        href="login.html"
+                        class="text-primary fw-semibold">
+
+                        Login
+
+                    </a>
+
+                </div>
+
+
+                <!-- Home -->
+
+                <div
+                    class="text-center mt-3">
+
+                    <a
+                        href="../index.html"
+                        class="text-decoration-none">
+
+                        ← Back to Home
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../js/auth.js"></script>
+
+
+<script>
+
+document
+    .getElementById("signupForm")
+    .addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+            createAccount();
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Prep2Hire AI Interview Room">
+
+    <title>Prep2Hire | AI Interview</title>
+
+
+    <!-- Bootstrap -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+
+    <style>
+
+        /* =====================================
+           PAGE
+        ===================================== */
+
+        body {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f5f9ff,
+                    #eef5ff
+                );
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =====================================
+           NAVBAR
+        ===================================== */
+
+        .interview-navbar {
+
+            background: rgba(255,255,255,0.92);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom:
+                1px solid #e5e7eb;
+
+        }
+
+
+        .brand {
+
+            text-decoration: none;
+
+            font-size: 1.4rem;
+
+            font-weight: 700;
+
+            color: #2563eb;
+
+        }
+
+
+        /* =====================================
+           MAIN CONTAINER
+        ===================================== */
+
+        .interview-container {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+        }
+
+
+        /* =====================================
+           CARD
+        ===================================== */
+
+        .interview-card {
+
+            background: white;
+
+            border-radius: 24px;
+
+            border: none;
+
+            box-shadow:
+                0 12px 35px
+                rgba(37,99,235,0.08);
+
+        }
+
+
+        /* =====================================
+           AI AVATAR
+        ===================================== */
+
+        .ai-avatar {
+
+            width: 150px;
+
+            height: 150px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid #dbeafe;
+
+            box-shadow:
+                0 0 0 8px #eff6ff;
+
+        }
+
+
+        .ai-avatar.speaking {
+
+            animation:
+                avatarSpeaking 1.2s infinite;
+
+        }
+
+
+        @keyframes avatarSpeaking {
+
+            0% {
+
+                transform: scale(1);
+
+            }
+
+            50% {
+
+                transform: scale(1.05);
+
+            }
+
+            100% {
+
+                transform: scale(1);
+
+            }
+
+        }
+
+
+        /* =====================================
+           CAMERA
+        ===================================== */
+
+        .camera-box {
+
+            position: relative;
+
+            background: #111827;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+        }
+
+
+        #candidateCamera {
+
+            width: 100%;
+
+            height: 390px;
+
+            object-fit: cover;
+
+            transform: scaleX(-1);
+
+            display: block;
+
+        }
+
+
+        .camera-label {
+
+            position: absolute;
+
+            left: 15px;
+
+            top: 15px;
+
+            background:
+                rgba(0,0,0,0.65);
+
+            color: white;
+
+            padding:
+                7px 13px;
+
+            border-radius: 20px;
+
+            font-size: 0.85rem;
+
+        }
+
+
+        .camera-status {
+
+            position: absolute;
+
+            right: 15px;
+
+            top: 15px;
+
+            background:
+                rgba(25,135,84,0.9);
+
+            color: white;
+
+            padding:
+                7px 13px;
+
+            border-radius: 20px;
+
+            font-size: 0.85rem;
+
+        }
+
+
+        /* =====================================
+           QUESTION
+        ===================================== */
+
+        .question-box {
+
+            background: #f8fafc;
+
+            border-radius: 20px;
+
+            padding: 25px;
+
+            min-height: 150px;
+
+        }
+
+
+        .question-text {
+
+            font-size: 1.3rem;
+
+            font-weight: 600;
+
+            line-height: 1.6;
+
+            color: #1f2937;
+
+        }
+
+
+        /* =====================================
+           STATUS
+        ===================================== */
+
+        .ai-status {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                8px 16px;
+
+            border-radius: 30px;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            font-weight: 600;
+
+        }
+
+
+        .listening-status {
+
+            background: #ecfdf5;
+
+            color: #198754;
+
+        }
+
+
+        .thinking-status {
+
+            background: #fff7ed;
+
+            color: #ea580c;
+
+        }
+
+
+        /* =====================================
+           MICROPHONE
+        ===================================== */
+
+        .mic-button {
+
+            width: 90px;
+
+            height: 90px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            background: #2563eb;
+
+            color: white;
+
+            font-size: 2rem;
+
+            box-shadow:
+                0 10px 25px
+                rgba(37,99,235,0.25);
+
+        }
+
+
+        .mic-button.recording {
+
+            background: #dc3545;
+
+            animation:
+                microphonePulse 1.2s infinite;
+
+        }
+
+
+        @keyframes microphonePulse {
+
+            0% {
+
+                box-shadow:
+                    0 0 0 0
+                    rgba(220,53,69,0.5);
+
+            }
+
+            70% {
+
+                box-shadow:
+                    0 0 0 18px
+                    rgba(220,53,69,0);
+
+            }
+
+            100% {
+
+                box-shadow:
+                    0 0 0 0
+                    rgba(220,53,69,0);
+
+            }
+
+        }
+
+
+        /* =====================================
+           TIMER
+        ===================================== */
+
+        .timer {
+
+            font-size: 1.1rem;
+
+            font-weight: 700;
+
+            color: #2563eb;
+
+            background: #eff6ff;
+
+            padding:
+                10px 18px;
+
+            border-radius: 15px;
+
+        }
+
+
+        /* =====================================
+           INFO
+        ===================================== */
+
+        .info-item {
+
+            background: #f8fafc;
+
+            border-radius: 15px;
+
+            padding: 12px;
+
+        }
+
+
+        .info-label {
+
+            font-size: 0.8rem;
+
+            color: #6b7280;
+
+        }
+
+
+        .info-value {
+
+            font-weight: 600;
+
+        }
+
+
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
+
+        @media(max-width:768px) {
+
+            #candidateCamera {
+
+                height: 280px;
+
+            }
+
+            .ai-avatar {
+
+                width: 110px;
+
+                height: 110px;
+
+            }
+
+            .question-text {
+
+                font-size: 1.1rem;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVBAR
+========================================== -->
+
+<nav class="navbar interview-navbar">
+
+    <div class="container">
+
+        <div
+            class="d-flex
+                   justify-content-between
+                   align-items-center
+                   w-100">
+
+            <a
+                href="dashboard.html"
+                class="brand">
+
+                <i class="bi bi-stars"></i>
+
+                Prep2Hire
+
+            </a>
+
+
+            <div
+                class="d-flex
+                       align-items-center
+                       gap-3">
+
+                <div class="timer">
+
+                    <i class="bi bi-stopwatch"></i>
+
+                    <span id="timer">
+                        10:00
+                    </span>
+
+                </div>
+
+
+                <button
+                    id="endInterviewBtn"
+                    class="btn
+                           btn-outline-danger
+                           rounded-pill">
+
+                    <i class="bi bi-x-circle"></i>
+
+                    End Interview
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================
+     MAIN
+========================================== -->
+
+<main
+    class="container
+           py-4
+           interview-container">
+
+
+    <!-- =====================================
+         INTERVIEW INFORMATION
+    ====================================== -->
+
+    <div
+        class="interview-card
+               p-3
+               mb-4">
+
+        <div class="row g-3 text-center">
+
+            <div class="col-md-3">
+
+                <div class="info-item">
+
+                    <div class="info-label">
+                        Company
+                    </div>
+
+                    <div
+                        id="companyName"
+                        class="info-value">
+
+                        Selected Company
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="info-item">
+
+                    <div class="info-label">
+                        Job Role
+                    </div>
+
+                    <div
+                        id="roleName"
+                        class="info-value">
+
+                        Selected Role
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="info-item">
+
+                    <div class="info-label">
+                        Interview Type
+                    </div>
+
+                    <div
+                        id="interviewMode"
+                        class="info-value">
+
+                        HR
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="info-item">
+
+                    <div class="info-label">
+                        Question
+                    </div>
+
+                    <div class="info-value">
+
+                        <span id="questionNumber">
+                            1
+                        </span>
+
+                        /
+
+                        <span id="totalQuestions">
+                            5
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         INTERVIEW ROOM
+    ====================================== -->
+
+    <div class="row g-4">
+
+
+        <!-- =================================
+             AI SIDE
+        ================================== -->
+
+        <div class="col-lg-6">
+
+            <div
+                class="interview-card
+                       p-4
+                       text-center
+                       h-100">
+
+                <h5 class="fw-bold mb-4">
+
+                    <i class="bi bi-robot text-primary"></i>
+
+                    AI Interviewer
+
+                </h5>
+
+
+                <!-- AI Avatar -->
+
+                <img
+                    id="aiAvatar"
+                    src="../images/ai-avatar.png"
+                    alt="AI Interviewer"
+                    class="ai-avatar mb-4">
+
+
+                <!-- AI status -->
+
+                <div
+                    id="aiStatus"
+                    class="ai-status mb-4">
+
+                    <i class="bi bi-hourglass-split"></i>
+
+                    Ready to begin
+
+                </div>
+
+
+                <!-- Question -->
+
+                <div
+                    class="question-box
+                           text-start">
+
+                    <div
+                        id="questionText"
+                        class="question-text">
+
+                        Welcome to your AI interview.
+
+                        Click the microphone button
+                        below to begin.
+
+                    </div>
+
+                </div>
+
+
+                <!-- Start -->
+
+                <button
+                    id="startInterviewBtn"
+                    class="btn
+                           btn-primary
+                           btn-lg
+                           rounded-pill
+                           px-5
+                           mt-4">
+
+                    <i class="bi bi-play-fill"></i>
+
+                    Start Interview
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             CANDIDATE SIDE
+        ================================== -->
+
+        <div class="col-lg-6">
+
+            <div
+                class="interview-card
+                       p-3
+                       h-100">
+
+
+                <!-- Camera -->
+
+                <div class="camera-box">
+
+                    <video
+                        id="candidateCamera"
+                        autoplay
+                        muted
+                        playsinline>
+                    </video>
+
+
+                    <div class="camera-label">
+
+                        <i class="bi bi-person-video"></i>
+
+                        You
+
+                    </div>
+
+
+                    <div
+                        id="cameraStatus"
+                        class="camera-status">
+
+                        Camera Off
+
+                    </div>
+
+                </div>
+
+
+                <!-- Microphone status -->
+
+                <div
+                    class="text-center
+                           mt-4">
+
+                    <div
+                        id="micStatus"
+                        class="ai-status">
+
+                        <i class="bi bi-mic-mute"></i>
+
+                        Microphone Off
+
+                    </div>
+
+                </div>
+
+
+                <!-- Microphone -->
+
+                <div
+                    class="text-center
+                           mt-4">
+
+                    <button
+                        id="micButton"
+                        class="mic-button"
+                        disabled>
+
+                        <i class="bi bi-mic-fill"></i>
+
+                    </button>
+
+                    <p
+                        id="micInstruction"
+                        class="text-muted
+                               mt-3">
+
+                        Your microphone will activate
+                        when the AI asks a question.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Voice transcript -->
+
+                <div
+                    class="mt-4">
+
+                    <label
+                        class="form-label
+                               fw-semibold">
+
+                        <i class="bi bi-chat-square-text"></i>
+
+                        Your response
+
+                    </label>
+
+                    <div
+                        id="transcriptBox"
+                        class="question-box
+                               text-muted">
+
+                        Your spoken answer will appear
+                        here after speech recognition.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         INTERVIEW PROGRESS
+    ====================================== -->
+
+    <div
+        class="interview-card
+               p-4
+               mt-4">
+
+        <div
+            class="d-flex
+                   justify-content-between
+                   mb-2">
+
+            <span class="fw-semibold">
+
+                Interview Progress
+
+            </span>
+
+            <span
+                id="progressText"
+                class="text-muted">
+
+                0%
+
+            </span>
+
+        </div>
+
+
+        <div
+            class="progress"
+            style="height: 10px;">
+
+            <div
+                id="progressBar"
+                class="progress-bar bg-primary"
+                style="width:0%;">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<!-- =========================================
+     BOOTSTRAP JS
+========================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- =========================================
+     AI INTERVIEW JS
+========================================== -->
+
+<script
+    src="../js/ai-interview.js">
+</script>
+
+
+</body>
+
+</html>

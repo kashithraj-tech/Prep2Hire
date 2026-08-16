@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prep2Hire | Settings</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg custom-navbar">
+
+        <div class="container">
+
+            <a class="navbar-brand logo-text fw-bold" href="../index.html">
+                Prep2Hire
+            </a>
+
+            <a href="dashboard.html" class="btn btn-outline-primary rounded-pill">
+                ← Dashboard
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- Page Header -->
+
+    <div class="container py-5">
+
+        <div class="text-center mb-5">
+
+            <h1 class="fw-bold">
+                Settings
+            </h1>
+
+            <p class="text-muted">
+                Manage your account preferences and application settings.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Profile Settings -->
+
+            <div class="col-lg-6">
+
+                <div class="card shadow border-0 rounded-4 p-4 h-100">
+
+                    <h4>
+                        <i class="bi bi-person-circle text-primary"></i>
+                        Profile Settings
+                    </h4>
+
+                    <hr>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            value="Kashithra">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            value="kashithra@email.com">
+
+                    </div>
+
+                    <button class="btn btn-primary rounded-pill">
+                        Save Changes
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Change Password -->
+
+            <div class="col-lg-6">
+
+                <div class="card shadow border-0 rounded-4 p-4 h-100">
+
+                    <h4>
+                        <i class="bi bi-lock-fill text-success"></i>
+                        Change Password
+                    </h4>
+
+                    <hr>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Current Password
+                        </label>
+
+                        <input
+                            type="password"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            New Password
+                        </label>
+
+                        <input
+                            type="password"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Confirm Password
+                        </label>
+
+                        <input
+                            type="password"
+                            class="form-control">
+
+                    </div>
+
+                    <button class="btn btn-success rounded-pill">
+                        Update Password
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Notification Settings -->
+
+            <div class="col-lg-6">
+
+                <div class="card shadow border-0 rounded-4 p-4">
+
+                    <h4>
+                        <i class="bi bi-bell-fill text-warning"></i>
+                        Notifications
+                    </h4>
+
+                    <hr>
+
+                    <div class="form-check form-switch mb-3">
+
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            checked>
+
+                        <label class="form-check-label">
+                            Email Notifications
+                        </label>
+
+                    </div>
+
+                    <div class="form-check form-switch mb-3">
+
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            checked>
+
+                        <label class="form-check-label">
+                            Interview Reminders
+                        </label>
+
+                    </div>
+
+                    <div class="form-check form-switch">
+
+                        <input
+                            class="form-check-input"
+                            type="checkbox">
+
+                        <label class="form-check-label">
+                            Weekly Progress Report
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Appearance -->
+
+            <div class="col-lg-6">
+
+                <div class="card shadow border-0 rounded-4 p-4">
+
+                    <h4>
+                        <i class="bi bi-palette-fill text-danger"></i>
+                        Appearance
+                    </h4>
+
+                    <hr>
+
+                    <label class="form-label">
+                        Theme
+                    </label>
+
+                    <select class="form-select mb-3">
+
+                        <option selected>Light</option>
+                        <option>Dark</option>
+                        <option>System Default</option>
+
+                    </select>
+
+                    <button class="btn btn-dark rounded-pill">
+                        Apply Theme
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Account -->
+
+            <div class="col-12">
+
+                <div class="card shadow border-0 rounded-4 p-4">
+
+                    <h4>
+                        <i class="bi bi-shield-lock-fill text-info"></i>
+                        Account
+                    </h4>
+
+                    <hr>
+
+                    <div class="d-flex flex-wrap gap-3">
+
+                        <button class="btn btn-outline-primary rounded-pill">
+                            Export Data
+                        </button>
+
+                        <button class="btn btn-outline-secondary rounded-pill">
+                            Download Resume
+                        </button>
+
+                        <button class="btn btn-danger rounded-pill">
+                            Logout
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
